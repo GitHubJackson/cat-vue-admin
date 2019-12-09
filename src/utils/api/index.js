@@ -3,6 +3,7 @@ import request from './request'
 /* 登录模块 */
 /**
  * @desc   登录
+ * @param  {object} data
  * @param  {string} account 账号
  * @param  {string} password 密码
  */
@@ -14,15 +15,43 @@ export function login (data) {
   })
 }
 
-/* 学生作业相关接口 */
+/* 用户模块 */
 /**
- * @desc   学生获取作业详情
- * @param  {String} requestId 题目id
- * @param  {String} studentId 学生id
+ * @desc   获取用户信息
+ * @param  {object} params
+ * @param  {string} params.account 账号
  */
-export function getDetailOfStu (requestId, studentId) {
+export function getUser (params) {
   return request({
-    url: `/homework/${requestId}/${studentId}`,
-    method: 'get'
+    url: `/user`,
+    method: 'get',
+    params
+  })
+}
+
+/**
+ * @desc   更新用户信息
+ * @param  {object} data
+ * @param  {string} account 账号
+ * @param  {string} password 密码
+ */
+export function updateUser (data) {
+  return request({
+    url: `/user`,
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * @desc   删除用户
+ * @param  {object} params
+ * @param  {string} params._id
+ */
+export function delUser (params) {
+  return request({
+    url: `/user`,
+    method: 'delete',
+    params
   })
 }

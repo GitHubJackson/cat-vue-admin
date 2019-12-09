@@ -1,8 +1,9 @@
 import Axios from 'axios'
+import { baseUrl } from '@/utils/config'
 
 // 创建 axios 实例
 const axios = Axios.create({
-  baseURL: '***',
+  baseUrl,
   // withCredentials: true,
   timeout: 5000 // request timeout
 })
