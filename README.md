@@ -13,11 +13,16 @@ npm run build // 打包
 + public
 + src
   + assets                  // 静态资源
+    + images
+    + style
+      - base.less           // 全局基础样式
   + components              // 公共组件
   + router                  // 路由配置
   + store                   // vuex 存储
-  + utils                   // 工具函数
+  + utils                   // 工具库
     - request.js              // 封装接口函数
+    - filters.js              // 全局过滤器
+    - index.js                // 工具函数
     + api                     // 接口文件
       - index.js              
   + views                   // 页面
@@ -28,6 +33,9 @@ npm run build // 打包
   - main.js
 - package.json
 ```
+## 规定
+- 在 store 里统一收集异步请求，便于管理异步请求和和简化页面代码
+
 ## 其他
 我会对这个小项目继续优化和更新，欢迎提 issue ，一起进步 ~
 
